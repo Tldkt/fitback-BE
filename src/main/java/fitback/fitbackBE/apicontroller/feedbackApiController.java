@@ -16,6 +16,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.Positive;
+
 /*피드백 작성
  * @Date 220925 @Author 정희윤
  * Dto: CreateFeedbackRequest(title 필수), CreateFeedbackResponse(id)
@@ -67,7 +69,7 @@ public class feedbackApiController {
         public CreatedFeedbackResponse(Long id){ this.id = id;}
     }
 
-    @Data
+    @Data//자동으로 getter setter constructor 등 설정해주는 애너테이션
     public static class PatchFeedbackRequest {
         private Long id;
         private String title;
